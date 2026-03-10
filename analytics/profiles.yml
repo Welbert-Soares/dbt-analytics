@@ -1,0 +1,10 @@
+analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "{{ env_var('PROJECT_ID') }}"
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt_core_dw') }}"
+      threads: 4
+      keyfile: /home/welbertsoares/.dbt/{{ env_var('PROJECT_ID') }}-d56e84cf0b55.json
